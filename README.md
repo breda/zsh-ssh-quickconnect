@@ -3,12 +3,16 @@
 Just a simple utility function that grabs all hosts from .ssh/config file & known_hosts (when a Host entry uses glob matching)
 and prints them for selection using fzf and SSHes into the selected entry.
 
+## Prerequisites
+
+This script requires `fzf` to be installed.
+
+## Install
 Just clone this repo somewhere then source the `.sh` script in your .zshrc somewhere
 
 ```bash
 git clone https://github.com/breda/zsh-ssh-quickconnect $ZSH/plugins/ssh-quick-connect
 ```
-
 
 ```bash
 source $ZSH/plugins/zsh-ssh-quickconnect.plugin.sh
@@ -33,4 +37,4 @@ Host *.production.work
 ```
 
 But because I name the DNS entries differently I can't be bothered to remember them all, so this utility function grabs all defined `Host`s from my SSH config,
-expands any entries containing globs with I have on my known_hosts file and displays a nice list to choose from. Making it easier and faster to SSH into a target box.
+expands any entries containing globs with what I have in my known_hosts file and displays a nice list to choose from. Making it easier and faster to SSH into a target box.
