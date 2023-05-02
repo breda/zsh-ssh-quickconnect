@@ -36,6 +36,13 @@ function sshqc() {
     done
 
     selected=$(printf "%s\n" "${remotes[@]}" | fzf)
+
+    # If nothing was selected
+    if [[ $selected == "" ]]; then
+        echo "Nothing to do\n"
+        exit 0
+    done
+
     echo "SSHing into $selected now... \n"
     eval "ssh $selected"
 }
